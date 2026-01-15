@@ -10,8 +10,7 @@ export class ProductPage {
   async searchWallet() {
     await this.page.waitForSelector('#gh-ac', { timeout: 60000 });
     await this.page.click('#gh-ac');
-    await this.page.keyboard.type('wallet', { delay: 100 });
-    await this.page.waitForTimeout(1000);
+    await this.page.keyboard.type('wallet');
     await this.page.keyboard.press('Enter');
   }
 
