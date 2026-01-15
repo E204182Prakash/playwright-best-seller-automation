@@ -30,3 +30,16 @@ test('Verify related product prices within ±20%', async ({ page }) => {
     expect(price).toBeLessThanOrEqual(mainPrice * 1.2);
   }
 });
+
+
+test('Verify page refresh behavior on related products section', async ({ page }) => {
+  await page.goto(`file://${mockFilePath}`);
+
+  const itemsBefore = await page.locator('#related-products li').count();
+
+  await page.reload();
+
+  const itemsAfter = await page.locator('#related-products li').count();
+
+  expect(itemsAfter).toBe(itemsBefore);
+});
