@@ -9,7 +9,7 @@ export default defineConfig({
   reporter: 'html',
 
   use: {
-    headless: false,
+    headless: true,
     navigationTimeout: 30000,
     trace: 'on-first-retry',
   },
